@@ -2,10 +2,19 @@
   <div class="glass-card">
     <h1 class="game-title">Welcome to GameHub</h1>
     <p class="game-description">The ultimate destination for your next favorite game. Click below to start playing.</p>
-    <button class="btn-play">PLAY NOW</button>
-  </div>
+    <button class="btn-play" routerLink="/game">PLAY NOW</button> 
+ </div>
 </main>
+<nav>
+  <a routerLink="/">PLEASE LOGIN FIRST TO PLAY THE GAME </a>
 
+  <div *ngIf="!isLoggedIn()">
+    <button routerLink="/login">Login</button>
+    <button routerLink="/signup">Sign Up</button>
+  </div>
+
+  
+</nav>
 <button class="btn-settings" aria-label="Settings">
   ⚙️
 </button>

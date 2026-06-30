@@ -9,4 +9,10 @@
     <button class="btn-login" routerLink="/login">Sign In</button>
     <button class="btn-signup" routerLink="/signup">Sign Up</button>
   </div>
+  <div *ngIf="isLoggedIn()">
+    <button (click)="openProfile()" class="profile-circle">
+      <img src="user-icon.png" alt="Profile">
+    </button>
+  </div>
+
 </header>

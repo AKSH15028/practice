@@ -7,6 +7,15 @@ import { RouterLink } from '@angular/router';
   standalone: true,
   imports: [CommonModule, RouterLink],
   templateUrl: './header.html',
-  styleUrl: './header.css',
+  styleUrls: ['./header.css'],
 })
-export class Header {}
+export class Header {
+  isLoggedIn(): boolean {
+    // Check if the token exists in localStorage
+    return localStorage.getItem('userToken') !== null;
+  }
+
+  openProfile() {
+    
+  }
+}
