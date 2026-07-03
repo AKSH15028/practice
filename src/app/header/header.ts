@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, Inject, PLATFORM_ID } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -10,8 +10,14 @@ import { RouterLink } from '@angular/router';
   styleUrls: ['./header.css'],
 })
 export class Header {
+  private isBrowser: boolean;
+
+  constructor(@Inject(PLATFORM_ID) platformId: object) {
+    this.isBrowser = isPlatformBrowser(platformId);
+  }
+
   isLoggedIn(): boolean {
-    // Check if the token exists in localStorage
+    if (!this.isBrowser) return false;
     return localStorage.getItem('userToken') !== null;
   }
 

@@ -1,3 +1,4 @@
+<app-header></app-header>
 <main class="hero-section">
   <div class="glass-card">
     <h1 class="game-title">Welcome to GameHub</h1>
@@ -5,16 +6,7 @@
     <button class="btn-play" routerLink="/game">PLAY NOW</button> 
  </div>
 </main>
-<nav>
-  <a routerLink="/">PLEASE LOGIN FIRST TO PLAY THE GAME </a>
 
-  <div *ngIf="!isLoggedIn()">
-    <button routerLink="/login">Login</button>
-    <button routerLink="/signup">Sign Up</button>
-  </div>
-
-  
-</nav>
-<button class="btn-settings" aria-label="Settings">
+<button class="btn-settings" aria-label="Settings" routerLink="/settings">
   ⚙️
 </button>

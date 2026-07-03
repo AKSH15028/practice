@@ -2,12 +2,13 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { Router } from '@angular/router';
+import { Header } from '../header/header';
 
 
 @Component({
   selector: 'app-login',
-    standalone: true,
-  imports: [CommonModule, RouterLink],
+  standalone: true,
+  imports: [CommonModule, RouterLink, Header],
   templateUrl: './login.html',
   styleUrl: './login.css',
 })
